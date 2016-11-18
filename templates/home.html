@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <div class="starter-template">
+        <h1>Welcome!</h1>
+        <p class="lead">Select your player</p>
+        <a class="btn btn-default" href="{% url 'board' 1 %}">Player 1</a>
+        <a class="btn btn-default" href="{% url 'board' 2 %}">Player 2</a>
+      </div>
+{% endblock %}

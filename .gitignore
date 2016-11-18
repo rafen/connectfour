@@ -1,0 +1,18 @@
+# Compilation artifacts
+*.py[co]
+
+# IDE meta
+.idea
+*.sw[po]
+.ropeproject
+.DS_Store
+
+# Generated content
+generated
+media
+
+# Local configuration objects
+db.sqlite3
+logs/
+laatingcourses/settings/local.py
+__pycache__
