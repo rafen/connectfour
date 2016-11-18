@@ -7,6 +7,12 @@ from .models import Board
 
 
 class BoardView(TemplateView):
+    """
+    This view renders the board for each user.
+    FIXME: this view also handle post method to restart game and add pieces to the board
+    This should be done using an API. I suggest to use Django Rest Framework for this
+    """
+
     template_name = "board.html"
 
     @method_decorator(csrf_exempt)
@@ -31,6 +37,7 @@ class BoardView(TemplateView):
         context['rows'] = range(board.ROWS)
         return context
 
+    # FIXME: use Django Rest Frame work to handle posts
     def post(self, request, *args, **kwargs):
         # TODO: Use a form to validate User input
         if 'new' in request.POST:

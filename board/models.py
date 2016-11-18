@@ -73,3 +73,11 @@ class Board(models.Model):
                 self.set_board(board)
                 return True
         return False
+
+    def check_winner(self):
+        """
+        Returns PLAYER1, PLAYER2 if there's a winner on the current state of the game
+        None for no winner
+        """
+        # TODO: implement functionality
+        return None
