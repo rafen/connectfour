@@ -1,6 +1,20 @@
 # Connect Four game
 This is a timed python test for Deviget.
-The idea is to implement the classic game Connect Four.
+The idea is to implement the classic game Connect Four. (http://en.wikipedia.org/wiki/Connect_Four)
+
+## Architecture
+The game was implemented with Django 1.10
+Two custom Apps were created for this site:
+
+### board
+In this app we have the main functionalities and models of the site.
+The models.py file contain the data modeling of the game and some functionality to play the actual game (I suggest to read the inline doc of this file to understand better how the data is stored).
+In the tests.py file we have tests that checks and demostrate the usage of the models.
+views.py file has the views that use the models actions to perform the game play.
+
+### common
+This app contains some helpers that can be used across the site, like common templatetags, sipmle views and pages.
+
 
 ## With the given time we covered:
 
