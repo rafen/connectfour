@@ -57,14 +57,19 @@ class Board(models.Model):
         """
         board = self.get_board()
         rows = board[str(column_number)]
+
         for i, row in enumerate(rows):
-            import ipdb; ipdb.set_trace()
+            # if current row is not empty, then we have no more space
             if row != self.EMPTY:
                 return False
+            # if we hit the bottom place the piece
             if i == self.ROWS - 1:
                 rows[i] = player_number
+                self.set_board(board)
                 return True
-            if rows[i + 1] != self.EMPTY:
-                row[i] = player_number
+            # if next piece is not empty place the piece here
+            elif rows[i + 1] != self.EMPTY:
+                rows[i] = player_number
+                self.set_board(board)
                 return True
         return False
