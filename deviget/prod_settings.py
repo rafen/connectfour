@@ -20,3 +20,5 @@ TEMPLATES = [
         },
     },
 ]
+superadmin
+WelcomeDeviget

@@ -17,7 +17,15 @@ The idea is to implement the classic game Connect Four.
  * Game authentication and secuirity
  * Better UI, with the usage or a front-end framework
  * More unit test and functional tests.
+ * Other good practices can be added like automatic deployments, continous integration, etc.
 
 ## Tests
 
   * running tests: `./manage.py test`
+
+
+## Deployment
+
+You can visit and test the web app on:  http://rafen.webfactional.com/
+It's deployed on hosting of Webfaction.
+Admin UI: http://rafen.webfactional.com/admin/
