@@ -1,8 +1,41 @@
 {% extends 'base.html' %}
+{% load helpers %}
 
 {% block content %}
-      <div class="starter-template">
-        <h1>Welcome player {{player_number}}!</h1>
-        <p class="lead">Your board</p>
-      </div>
+  <div class="starter-template">
+    <h1>Welcome player {{player_number}}!</h1>
+    <p class="lead">Your board</p>
+  </div>
+
+   <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          {% for col, rows in board.items %}
+                            <td>
+                              <a href="#" class="btn btn-default">
+                                <i class="glyphicon glyphicon-arrow-down"></i>
+                              </a>
+                            </td>
+                          {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in rows %}
+                        <tr>
+                            {% for col, rows in board.items %}
+                                <td>
+                                    {{rows|index:i}}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
