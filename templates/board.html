@@ -5,17 +5,26 @@
   <div class="starter-template">
     <h1>Welcome player {{player_number}}!</h1>
     <p class="lead">Your board</p>
+    <a href="#" class="btn btn-primary btn-sm new">New Game</a>
   </div>
 
    <div class="row">
         <div class="col-md-12">
-            <div class="table-responsive">
+        <div id="message">
+          {% if message %}
+            <div class="alert alert-danger">
+                {{message}}
+            </div>
+          {% endif %}
+        </div>
+
+            <div class="table-responsive" id="board">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                           {% for col, rows in board.items %}
                             <td>
-                              <a href="#" class="btn btn-default">
+                              <a href="#" class="btn btn-default play" data-col="{{col}}">
                                 <i class="glyphicon glyphicon-arrow-down"></i>
                               </a>
                             </td>
@@ -38,4 +47,43 @@
         </div>
     </div>
 
+{% endblock %}
+
+
+{% block js %}
+<script>
+$(function() {
+    $(document).on('click', '.play', function(){
+      $.post(
+        '.',
+        {player_number: {{player_number}}, column_number: $(this).data('col')},
+        function(data) {
+          $('#board').replaceWith($(data).find('#board'));
+          $('#message').replaceWith($(data).find('#message'));
+        }
+      );
+    });
+
+    $(document).on('click', '.new', function(){
+      $.post(
+        '.',
+        {new: true},
+        function(data) {
+          $('#board').replaceWith($(data).find('#board'));
+          $('#message').replaceWith($(data).find('#message'));
+        }
+      );
+    });
+
+    window.setInterval(function(){
+      // Update board every 2 seconds
+      $.get(
+        '.',
+        function(data) {
+          $('#board').replaceWith($(data).find('#board'));
+        }
+      );
+    }, 2000);
+});
+</script>
 {% endblock %}
