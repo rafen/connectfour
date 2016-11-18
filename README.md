@@ -26,6 +26,22 @@ The idea is to implement the classic game Connect Four.
 
 ## Deployment
 
-You can visit and test the web app on:  http://rafen.webfactional.com/
+You can visit and test the web app on:
+
+http://rafen.webfactional.com/
+
 It's deployed on hosting of Webfaction.
 Admin UI: http://rafen.webfactional.com/admin/
+
+
+## Usage:
+
+Home Page
+![Home Page](https://dl.dropboxusercontent.com/u/14133267/static/ConnectFour.png)
+
+Board Page
+![Board](https://dl.dropboxusercontent.com/u/14133267/static/ConnectFourBoard.png)
+
+Admin Site
+![Admin](https://dl.dropboxusercontent.com/u/14133267/static/ConnectFourAdmin.png)
+
